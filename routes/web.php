@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ConcertController@index');
+Route::get('/concerts/create', 'ConcertController@create');
+Route::get('/concerts/{concert}', 'ConcertController@show');
+Route::post('/concerts/store', 'ConcertController@store');
+Route::get('/concerts/{concert}/edit', 'ConcertController@edit');
+Route::put('/concerts/{concert}', 'ConcertController@update');
+Route::delete('/concerts/{concert}', 'ConcertController@delete');
